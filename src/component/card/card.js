@@ -1,37 +1,40 @@
 import styled from "styled-components";
-import { Subtitle } from "../styledComponents/style";
+import { Label, Subtitle } from "../styledComponents/style";
 
 const Container = styled.div`
   padding: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px #ddd;
-	margin: 10px 0;
-`
+  margin: 10px 0;
+`;
 const Row = styled.div`
   display: flex;
-`
+`;
 const Column = styled.div`
-	width: 50%;
-	
-`
+  width: 50%;
+`;
 
-function Card() {
+function Card({line, prevision, driver, busNumber}) {
   return (
     <Container>
       <Row>
         <Column>
-          <Subtitle>P52</Subtitle>
+          <Label>Linha</Label>
+          <Subtitle>{line}</Subtitle>
         </Column>
         <Column>
-          <Subtitle>20min</Subtitle>
+          <Label>Previsão</Label>
+          <Subtitle>{prevision}</Subtitle>
         </Column>
       </Row>
       <Row>
         <Column>
-          <Subtitle>João Carlos</Subtitle>
+          <Label>Motorista</Label>
+          <Subtitle>{driver}</Subtitle>
         </Column>
         <Column>
-          <Subtitle>00001</Subtitle>
+          <Label>Ônibus</Label>
+          <Subtitle>{busNumber}</Subtitle>
         </Column>
       </Row>
     </Container>

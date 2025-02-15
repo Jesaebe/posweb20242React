@@ -16,13 +16,13 @@ const SelectInput = styled.select`
 `
 
 
-function SelectOne() {
+function SelectOne({options}) {
 	return (
 		<SelectInput>
 			<option value="">Selecione uma opção</option>
-			<option value="1">Valor 1</option>
-			<option value="2">Valor 2</option>
-			<option value="3">Valor 3</option>
+			{options.map((item) => (
+				<option value={item.line}>{item.line}</option>
+			))}
 		</SelectInput>
 	)
 }
